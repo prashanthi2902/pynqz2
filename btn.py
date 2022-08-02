@@ -38,19 +38,15 @@ ol.ip_dict.keys()
 # In[6]:
 
 
-led_ip = ol.ip_dict['led_gpio']
+led_ip = ol.ip_dict['led_gpio'] #creating alias for IP
 switches_ip = ol.ip_dict['sw_gpio']
 btns_ip = ol.ip_dict['btn_gpio']
 leds = AxiGPIO(led_ip).channel1
 switches = AxiGPIO(switches_ip).channel1
 btns = AxiGPIO(btns_ip).channel1
-#mask = 0xffffffff
-#leds.write(0xf, mask)
-#switches.read()
-switches.setdirection("in")
+switches.setdirection("in") 
 switches.setlength(3)
 btns.setdirection("in")
-#btns.setlength(3)
 btns.read()
 switches.read()
 
@@ -58,7 +54,7 @@ switches.read()
 # In[7]:
 
 
-switches[0].read()
+switches[0].read() #read status of swtiches
 
 
 # In[8]:
